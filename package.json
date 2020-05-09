@@ -1,6 +1,6 @@
 {
   "name": "progic-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A express core that design to code faster and effciently for serverless app",
   "author": "Sudono Tanjung",
   "homepage": "https://github.com/progictech/progic-core",

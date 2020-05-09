@@ -4,23 +4,20 @@ import {
 } from "routing-controllers";
 import { Environment } from "./Environment";
 import { HelmetMiddleware } from "./middleware/HelmetMiddleware";
-import { ClientChecker } from "./middleware/ClientChecker";
-import { InjectAuthToken } from "./middleware/InjectAuthToken";
 import { ErrorHandler } from "./middleware/ErrorHandler";
 import path = require("path");
 
 export class ProgicServer {
   static routingOptions = {};
   static app = null;
-  static routingDefaultOptions = {
+  static routingDefaultOptions: RoutingControllersOptions = {
     cors: true,
     classTransformer: true,
     middlewares: [
       HelmetMiddleware,
-      ClientChecker,
-      InjectAuthToken,
       ErrorHandler
     ],
+    validation:true,
     defaultErrorHandler: false,
     controllers: [path.join(__dirname, "controller", "*.js")]
   };
@@ -38,10 +35,8 @@ export class ProgicServer {
 }
 
 export * from "./decorator/CrudDecorators";
-export * from "./middleware/ClientChecker";
 export * from "./middleware/ErrorHandler";
 export * from "./middleware/HelmetMiddleware";
-export * from "./middleware/InjectAuthToken";
 export * from "./service/LogService";
 export * from "./service/ValidatorService";
 export * from "./util/Common";
@@ -50,3 +45,4 @@ export * from "./util/FormatUtil";
 export * from "./util/StringUtils";
 export * from "./util/System";
 export * from "./service/FirebaseStorage";
+export default ProgicServer;
