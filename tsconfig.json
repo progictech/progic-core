@@ -5,15 +5,13 @@
     "module": "commonjs",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "outDir": "lib",
+    "outDir": "./",
     "sourceMap": true,
     "strict": false,
-    "target": "es2017"
+    "target": "es2017",
+    "declaration": true
   },
   "compileOnSave": true,
-  "include": [
-    "src"
-  ],
   "exclude": [
     "node_modules"
   ]
